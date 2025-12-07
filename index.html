@@ -5,7 +5,6 @@
   <title>Abdelhakim Hani | Cybersecurity Engineer</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Cybersecurity Engineer | AI Security | Full Stack Developer">
-  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/3064/3064197.png">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
 
   <style>
@@ -14,64 +13,74 @@
 
     nav{
       position:fixed;top:0;width:100%;z-index:1000;
-      background:rgba(2,6,23,.8);backdrop-filter:blur(10px);
+      background:rgba(2,6,23,.85);backdrop-filter:blur(12px);
       display:flex;justify-content:space-between;align-items:center;
       padding:15px 10%;
       border-bottom:1px solid #1e293b;
     }
 
     nav a{color:#22c55e;text-decoration:none;margin-left:25px;font-weight:600}
+    nav a:hover{color:white}
 
     section{padding:110px 10%;min-height:100vh}
+    h2{text-align:center;color:#22c55e;font-size:2.4em;margin-bottom:40px}
 
+    /* HERO */
     .hero{
-      display:flex;flex-direction:column;align-items:center;justify-content:center;
-      text-align:center
+      display:flex;flex-direction:column;align-items:center;
+      justify-content:center;text-align:center;
+      background:radial-gradient(circle at top,#052e16,#020617);
     }
 
     .hero h1{font-size:3.2em;color:#22c55e}
     .hero p{font-size:1.2em;margin:20px 0;color:#cbd5f5}
 
     .btn{
-      margin-top:20px;
-      padding:12px 30px;
-      border-radius:30px;
-      border:none;
-      background:#22c55e;
-      color:#020617;
-      font-weight:700;
-      cursor:pointer;
-      transition:.3s;
+      margin-top:20px;padding:12px 30px;border-radius:50px;
+      border:none;background:#22c55e;color:#020617;
+      font-weight:700;cursor:pointer;transition:.3s
     }
 
     .btn:hover{transform:scale(1.08)}
 
-    h2{text-align:center;color:#22c55e;font-size:2.4em;margin-bottom:40px}
-
+    /* GRIDS */
     .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:25px}
 
     .card{
-      background:#020617;border:1px solid #1e293b;border-radius:12px;
-      padding:25px;transition:.3s
+      background:#020617;border:1px solid #1e293b;border-radius:14px;
+      padding:25px;transition:.4s;position:relative;overflow:hidden
     }
 
-    .card:hover{transform:translateY(-7px)}
+    .card::before{
+      content:"";position:absolute;top:0;left:0;width:100%;height:4px;
+      background:#22c55e;
+    }
 
+    .card:hover{transform:translateY(-10px)}
+
+    /* SKILLS BAR */
+    .skill{margin-bottom:15px}
+    .skill span{font-weight:600}
+    .bar{width:100%;height:8px;background:#1e293b;border-radius:50px;margin-top:6px}
+    .bar div{height:8px;background:#22c55e;border-radius:50px}
+
+    /* TABLE */
     table{width:100%;border-collapse:collapse}
     td,th{border:1px solid #1e293b;padding:14px}
     th{background:#052e16;color:#22c55e}
 
-    .projects a{display:block;margin:15px;font-size:1.05em}
-
+    /* CONTACT */
     .contact input,.contact textarea{
-      width:100%;padding:12px;margin-bottom:15px;
-      border-radius:6px;border:none;background:#020617;color:white;border:1px solid #1e293b
+      width:100%;padding:12px;margin-bottom:15px;border-radius:8px;
+      border:none;background:#020617;color:white;border:1px solid #1e293b
     }
 
-    footer{text-align:center;padding:40px;border-top:1px solid #1e293b}
+    footer{text-align:center;padding:50px;border-top:1px solid #1e293b;color:#94a3b8}
 
-    .reveal{opacity:0;transform:translateY(40px);transition:1s}
+    /* ANIMATIONS */
+    .reveal{opacity:0;transform:translateY(50px);transition:1s}
     .reveal.active{opacity:1;transform:none}
+
   </style>
 </head>
 
@@ -84,71 +93,66 @@
     <a href="#experience">Experience</a>
     <a href="#projects">Projects</a>
     <a href="#skills">Skills</a>
-    <a href="#blog">Blog</a>
     <a href="#contact">Contact</a>
   </div>
 </nav>
 
+<!-- HERO -->
 <section class="hero">
   <h1>Cybersecurity Engineer</h1>
-  <p>AI Security · Full Stack Development · SOC Analyst</p>
+  <p>AI Security · SOC Analyst · Full Stack Developer</p>
   <button class="btn" onclick="window.open('CV.pdf')">Download CV</button>
 </section>
 
+<!-- ABOUT -->
 <section id="about" class="reveal">
   <h2>About Me</h2>
   <p style="max-width:900px;margin:auto;text-align:center">
     I am a Computer Science Engineer specializing in Cybersecurity and Artificial Intelligence.
-    I focus on SOC operations, detection engineering, secure architectures, and automation.
-    Currently completing my degree at Université Internationale de Rabat.
+    Passionate about SOC operations, threat detection, secure architectures, and automation.
+    Currently completing my engineering degree at Université Internationale de Rabat.
   </p>
 </section>
 
+<!-- EXPERIENCE -->
 <section id="experience" class="reveal">
   <h2>Professional Experience</h2>
   <div class="grid">
     <div class="card">
-      <h3>Full Stack Developer — Copag</h3>
+      <h3>Full Stack Developer — Copag (Menara Holding)</h3>
       <p>Angular · Spring Boot · MySQL</p>
       <ul>
-        <li>Built full ERP platform</li>
+        <li>Built full commercial management platform</li>
         <li>Designed UML architecture</li>
-        <li>Deployed production system</li>
+        <li>Deployed production-ready system</li>
       </ul>
     </div>
   </div>
 </section>
 
+<!-- PROJECTS -->
 <section id="projects" class="reveal">
   <h2>Key Projects</h2>
   <div class="grid">
-    <div class="card">XSS Detection with Machine Learning</div>
-    <div class="card">C2 Architecture Simulation</div>
-    <div class="card">SOC Detection Lab</div>
-    <div class="card">Medical Image AI</div>
+    <div class="card">XSS Detection using Machine Learning</div>
+    <div class="card">C2 Architecture Network Simulation</div>
+    <div class="card">SOC & SIEM Detection Lab</div>
+    <div class="card">Medical Image AI Classification</div>
   </div>
 </section>
 
+<!-- SKILLS -->
 <section id="skills" class="reveal">
   <h2>Technical Skills</h2>
-  <table>
-    <tr><th>Field</th><th>Skills</th></tr>
-    <tr><td>Network Security</td><td>Firewall, VLAN, VPN</td></tr>
-    <tr><td>Penetration Testing</td><td>Recon, Exploitation</td></tr>
-    <tr><td>Development</td><td>Python, Java, JS</td></tr>
-    <tr><td>AI Security</td><td>TensorFlow, ML, Detection</td></tr>
-  </table>
+
+  <div class="skill"><span>Network Security</span><div class="bar"><div style="width:90%"></div></div></div>
+  <div class="skill"><span>Penetration Testing</span><div class="bar"><div style="width:85%"></div></div></div>
+  <div class="skill"><span>Python & Java</span><div class="bar"><div style="width:88%"></div></div></div>
+  <div class="skill"><span>AI & Machine Learning</span><div class="bar"><div style="width:80%"></div></div></div>
+
 </section>
 
-<section id="blog" class="reveal">
-  <h2>Cybersecurity Blog</h2>
-  <div class="grid">
-    <div class="card">How AI detects XSS attacks</div>
-    <div class="card">SOC Automation with Python</div>
-    <div class="card">Threat Hunting Guide (2025)</div>
-  </div>
-</section>
-
+<!-- CONTACT -->
 <section id="contact" class="reveal contact">
   <h2>Contact Me</h2>
   <form>
@@ -161,17 +165,19 @@
 
 <footer>
   <p>“Cybersecurity is not just protection — it’s precision.”</p>
-  <p>Morocco · Available for internships & junior roles</p>
+  <p>Morocco · Available for internships & junior cybersecurity roles</p>
 </footer>
 
 <script>
-  const reveals=document.querySelectorAll(".reveal");
-  window.addEventListener("scroll",()=>{
-    reveals.forEach(el=>{
-      const top=el.getBoundingClientRect().top;
-      if(top<window.innerHeight-100){el.classList.add("active")}
-    })
-  })
+  const reveals = document.querySelectorAll(".reveal");
+  window.addEventListener("scroll", ()=>{
+    reveals.forEach(el =>{
+      const top = el.getBoundingClientRect().top;
+      if(top < window.innerHeight - 120){
+        el.classList.add("active");
+      }
+    });
+  });
 </script>
 
 </body>
