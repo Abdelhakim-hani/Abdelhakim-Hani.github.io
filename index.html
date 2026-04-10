@@ -2,182 +2,1264 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Abdelhakim Hani | Cybersecurity Engineer</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Cybersecurity Engineer | AI Security | Full Stack Developer">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
-
+  <title>Abdelhakim Hani | Cybersecurity Engineer</title>
+  <meta name="description" content="Cybersecurity Engineer specializing in Threat Detection, SOC Operations, and AI-powered Security Systems. Based in Morocco.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
   <style>
-    *{margin:0;padding:0;box-sizing:border-box;font-family:Poppins,sans-serif}
-    body{background:#020617;color:#e5e7eb;scroll-behavior:smooth}
-
-    nav{
-      position:fixed;top:0;width:100%;z-index:1000;
-      background:rgba(2,6,23,.85);backdrop-filter:blur(12px);
-      display:flex;justify-content:space-between;align-items:center;
-      padding:15px 10%;
-      border-bottom:1px solid #1e293b;
+    :root {
+      --green: #00FF41;
+      --green-dim: #00c832;
+      --green-glow: rgba(0,255,65,0.15);
+      --blue: #00b4d8;
+      --bg: #0d1117;
+      --bg2: #161b22;
+      --bg3: #1c2128;
+      --border: #21262d;
+      --text: #c9d1d9;
+      --text-dim: #8b949e;
+      --red: #ff4757;
     }
 
-    nav a{color:#22c55e;text-decoration:none;margin-left:25px;font-weight:600}
-    nav a:hover{color:white}
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
-    section{padding:110px 10%;min-height:100vh}
-    h2{text-align:center;color:#22c55e;font-size:2.4em;margin-bottom:40px}
+    html { scroll-behavior: smooth; }
 
-    /* HERO */
-    .hero{
-      display:flex;flex-direction:column;align-items:center;
-      justify-content:center;text-align:center;
-      background:radial-gradient(circle at top,#052e16,#020617);
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      overflow-x: hidden;
     }
 
-    .hero h1{font-size:3.2em;color:#22c55e}
-    .hero p{font-size:1.2em;margin:20px 0;color:#cbd5f5}
+    /* ─── SCROLLBAR ─── */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: var(--bg); }
+    ::-webkit-scrollbar-thumb { background: var(--green-dim); border-radius: 3px; }
 
-    .btn{
-      margin-top:20px;padding:12px 30px;border-radius:50px;
-      border:none;background:#22c55e;color:#020617;
-      font-weight:700;cursor:pointer;transition:.3s
+    /* ─── NAV ─── */
+    nav {
+      position: fixed; top: 0; width: 100%; z-index: 100;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 16px 8%;
+      background: rgba(13,17,23,0.92);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
     }
 
-    .btn:hover{transform:scale(1.08)}
-
-    /* GRIDS */
-    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:25px}
-
-    .card{
-      background:#020617;border:1px solid #1e293b;border-radius:14px;
-      padding:25px;transition:.4s;position:relative;overflow:hidden
+    .nav-logo {
+      font-family: 'Fira Code', monospace;
+      font-size: 1.1rem;
+      color: var(--green);
+      text-decoration: none;
     }
 
-    .card::before{
-      content:"";position:absolute;top:0;left:0;width:100%;height:4px;
-      background:#22c55e;
+    .nav-logo span { color: var(--text-dim); }
+
+    .nav-links { display: flex; gap: 28px; list-style: none; }
+
+    .nav-links a {
+      color: var(--text-dim);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: color .2s;
+      position: relative;
     }
 
-    .card:hover{transform:translateY(-10px)}
-
-    /* SKILLS BAR */
-    .skill{margin-bottom:15px}
-    .skill span{font-weight:600}
-    .bar{width:100%;height:8px;background:#1e293b;border-radius:50px;margin-top:6px}
-    .bar div{height:8px;background:#22c55e;border-radius:50px}
-
-    /* TABLE */
-    table{width:100%;border-collapse:collapse}
-    td,th{border:1px solid #1e293b;padding:14px}
-    th{background:#052e16;color:#22c55e}
-
-    /* CONTACT */
-    .contact input,.contact textarea{
-      width:100%;padding:12px;margin-bottom:15px;border-radius:8px;
-      border:none;background:#020617;color:white;border:1px solid #1e293b
+    .nav-links a::after {
+      content: '';
+      position: absolute; bottom: -4px; left: 0;
+      width: 0; height: 2px;
+      background: var(--green);
+      transition: width .3s;
     }
 
-    footer{text-align:center;padding:50px;border-top:1px solid #1e293b;color:#94a3b8}
+    .nav-links a:hover { color: var(--green); }
+    .nav-links a:hover::after { width: 100%; }
 
-    /* ANIMATIONS */
-    .reveal{opacity:0;transform:translateY(50px);transition:1s}
-    .reveal.active{opacity:1;transform:none}
+    /* ─── HERO ─── */
+    #hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex; align-items: center; justify-content: center;
+      text-align: center;
+      overflow: hidden;
+    }
 
+    #matrix-canvas {
+      position: absolute; top: 0; left: 0;
+      width: 100%; height: 100%;
+      opacity: 0.07;
+      pointer-events: none;
+    }
+
+    .hero-content { position: relative; z-index: 1; padding: 0 20px; }
+
+    .hero-tag {
+      display: inline-block;
+      font-family: 'Fira Code', monospace;
+      font-size: 0.85rem;
+      color: var(--green);
+      border: 1px solid var(--green);
+      padding: 4px 14px;
+      border-radius: 20px;
+      margin-bottom: 24px;
+      background: var(--green-glow);
+    }
+
+    .hero-name {
+      font-size: clamp(2.4rem, 6vw, 4.2rem);
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: 16px;
+    }
+
+    .hero-name .highlight { color: var(--green); }
+
+    .hero-subtitle {
+      font-family: 'Fira Code', monospace;
+      font-size: clamp(1rem, 2.5vw, 1.3rem);
+      color: var(--text-dim);
+      margin-bottom: 10px;
+      min-height: 2rem;
+    }
+
+    .cursor {
+      display: inline-block;
+      width: 2px; height: 1.2em;
+      background: var(--green);
+      vertical-align: text-bottom;
+      animation: blink 0.8s step-end infinite;
+    }
+
+    @keyframes blink { 50% { opacity: 0; } }
+
+    .hero-desc {
+      max-width: 580px;
+      margin: 20px auto 36px;
+      color: var(--text-dim);
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+
+    .hero-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+
+    .btn {
+      padding: 12px 28px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all .25s;
+      border: none;
+    }
+
+    .btn-primary {
+      background: var(--green);
+      color: #0d1117;
+    }
+
+    .btn-primary:hover {
+      background: var(--green-dim);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(0,255,65,0.3);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--green);
+      border: 1px solid var(--green);
+    }
+
+    .btn-secondary:hover {
+      background: var(--green-glow);
+      transform: translateY(-2px);
+    }
+
+    /* ─── SECTIONS ─── */
+    section { padding: 90px 8%; }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .section-title h2 {
+      font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+      font-weight: 700;
+      color: white;
+    }
+
+    .section-title h2 span { color: var(--green); }
+
+    .section-title p {
+      margin-top: 10px;
+      color: var(--text-dim);
+      font-size: 0.95rem;
+    }
+
+    .divider {
+      width: 60px; height: 3px;
+      background: var(--green);
+      margin: 12px auto 0;
+      border-radius: 2px;
+    }
+
+    /* ─── ABOUT ─── */
+    #about { background: var(--bg); }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: start;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .about-text p {
+      color: var(--text-dim);
+      line-height: 1.8;
+      margin-bottom: 16px;
+    }
+
+    .about-text p strong { color: var(--text); }
+
+    .about-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 28px;
+    }
+
+    .stat-box {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 20px;
+      text-align: center;
+      transition: border-color .3s;
+    }
+
+    .stat-box:hover { border-color: var(--green); }
+
+    .stat-box .num {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--green);
+    }
+
+    .stat-box .label {
+      font-size: 0.8rem;
+      color: var(--text-dim);
+      margin-top: 4px;
+    }
+
+    .about-focus { display: flex; flex-direction: column; gap: 14px; }
+
+    .focus-item {
+      display: flex; gap: 14px; align-items: flex-start;
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--green);
+      padding: 16px 18px;
+      border-radius: 8px;
+      transition: transform .2s, box-shadow .2s;
+    }
+
+    .focus-item:hover {
+      transform: translateX(6px);
+      box-shadow: -4px 0 20px rgba(0,255,65,0.1);
+    }
+
+    .focus-icon {
+      font-size: 1.4rem;
+      min-width: 28px;
+    }
+
+    .focus-item h4 { font-size: 0.95rem; color: white; margin-bottom: 4px; }
+    .focus-item p { font-size: 0.82rem; color: var(--text-dim); line-height: 1.5; }
+
+    /* ─── EXPERIENCE ─── */
+    #experience { background: var(--bg2); }
+
+    .timeline { max-width: 800px; margin: 0 auto; position: relative; }
+
+    .timeline::before {
+      content: '';
+      position: absolute; left: 20px; top: 0; bottom: 0;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--green), transparent);
+    }
+
+    .timeline-item {
+      padding-left: 60px;
+      margin-bottom: 44px;
+      position: relative;
+    }
+
+    .timeline-dot {
+      position: absolute; left: 11px; top: 6px;
+      width: 20px; height: 20px;
+      background: var(--green);
+      border-radius: 50%;
+      border: 3px solid var(--bg2);
+      box-shadow: 0 0 12px rgba(0,255,65,0.5);
+    }
+
+    .timeline-card {
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px 28px;
+      transition: border-color .3s, box-shadow .3s;
+    }
+
+    .timeline-card:hover {
+      border-color: var(--green);
+      box-shadow: 0 4px 30px rgba(0,255,65,0.08);
+    }
+
+    .timeline-header {
+      display: flex; justify-content: space-between; align-items: flex-start;
+      flex-wrap: wrap; gap: 8px;
+      margin-bottom: 12px;
+    }
+
+    .timeline-title { font-size: 1.05rem; font-weight: 700; color: white; }
+    .timeline-company { font-size: 0.9rem; color: var(--green); margin-top: 3px; }
+
+    .timeline-date {
+      font-family: 'Fira Code', monospace;
+      font-size: 0.8rem;
+      color: var(--text-dim);
+      background: var(--bg2);
+      padding: 4px 10px;
+      border-radius: 20px;
+      white-space: nowrap;
+    }
+
+    .timeline-card ul {
+      list-style: none;
+      margin: 12px 0;
+    }
+
+    .timeline-card ul li {
+      padding: 4px 0;
+      color: var(--text-dim);
+      font-size: 0.9rem;
+      padding-left: 18px;
+      position: relative;
+    }
+
+    .timeline-card ul li::before {
+      content: '▸';
+      position: absolute; left: 0;
+      color: var(--green);
+    }
+
+    .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+
+    .tag {
+      font-size: 0.75rem;
+      padding: 3px 10px;
+      border-radius: 20px;
+      background: var(--green-glow);
+      color: var(--green);
+      border: 1px solid rgba(0,255,65,0.2);
+      font-family: 'Fira Code', monospace;
+    }
+
+    /* ─── PROJECTS ─── */
+    #projects { background: var(--bg); }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 22px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .project-card {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 26px;
+      display: flex; flex-direction: column;
+      transition: transform .25s, border-color .25s, box-shadow .25s;
+      position: relative; overflow: hidden;
+    }
+
+    .project-card::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--green), var(--blue));
+      opacity: 0;
+      transition: opacity .3s;
+    }
+
+    .project-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(0,255,65,0.4);
+      box-shadow: 0 12px 40px rgba(0,255,65,0.08);
+    }
+
+    .project-card:hover::before { opacity: 1; }
+
+    .project-card-header {
+      display: flex; justify-content: space-between; align-items: flex-start;
+      margin-bottom: 12px;
+    }
+
+    .project-icon {
+      width: 44px; height: 44px;
+      background: var(--green-glow);
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.3rem;
+      border: 1px solid rgba(0,255,65,0.2);
+    }
+
+    .project-links { display: flex; gap: 8px; }
+
+    .project-links a {
+      width: 32px; height: 32px;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--text-dim);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: all .2s;
+    }
+
+    .project-links a:hover {
+      color: var(--green);
+      border-color: var(--green);
+      background: var(--green-glow);
+    }
+
+    .project-name {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: white;
+      margin-bottom: 8px;
+    }
+
+    .project-desc {
+      font-size: 0.88rem;
+      color: var(--text-dim);
+      line-height: 1.6;
+      flex: 1;
+    }
+
+    .project-type {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-family: 'Fira Code', monospace;
+      padding: 2px 8px;
+      border-radius: 4px;
+      margin-bottom: 10px;
+    }
+
+    .type-security { background: rgba(255,71,87,0.15); color: var(--red); border: 1px solid rgba(255,71,87,0.3); }
+    .type-ai { background: rgba(0,180,216,0.15); color: var(--blue); border: 1px solid rgba(0,180,216,0.3); }
+    .type-fullstack { background: rgba(0,255,65,0.1); color: var(--green); border: 1px solid rgba(0,255,65,0.2); }
+    .type-desktop { background: rgba(139,148,158,0.15); color: #8b949e; border: 1px solid rgba(139,148,158,0.3); }
+    .type-systems { background: rgba(255,166,0,0.12); color: #ffa600; border: 1px solid rgba(255,166,0,0.25); }
+
+    /* ─── SKILLS ─── */
+    #skills { background: var(--bg2); }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 22px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .skill-category {
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+      transition: border-color .3s;
+    }
+
+    .skill-category:hover { border-color: rgba(0,255,65,0.3); }
+
+    .skill-category h3 {
+      font-size: 0.85rem;
+      font-family: 'Fira Code', monospace;
+      color: var(--green);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 16px;
+      display: flex; align-items: center; gap: 8px;
+    }
+
+    .skill-badges { display: flex; flex-wrap: wrap; gap: 8px; }
+
+    .badge {
+      font-size: 0.8rem;
+      padding: 5px 12px;
+      border-radius: 6px;
+      background: var(--bg2);
+      color: var(--text);
+      border: 1px solid var(--border);
+      transition: all .2s;
+      font-family: 'Fira Code', monospace;
+    }
+
+    .badge:hover {
+      border-color: var(--green);
+      color: var(--green);
+      background: var(--green-glow);
+    }
+
+    /* ─── CERTIFICATIONS ─── */
+    #certifications { background: var(--bg); }
+
+    .certs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .cert-card {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 20px;
+      display: flex; align-items: center; gap: 14px;
+      transition: border-color .3s, transform .2s;
+    }
+
+    .cert-card:hover {
+      border-color: var(--green);
+      transform: translateY(-3px);
+    }
+
+    .cert-icon {
+      font-size: 1.6rem;
+      min-width: 32px;
+      text-align: center;
+    }
+
+    .cert-name {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text);
+      line-height: 1.4;
+    }
+
+    .cert-issuer {
+      font-size: 0.75rem;
+      color: var(--green);
+      margin-top: 3px;
+      font-family: 'Fira Code', monospace;
+    }
+
+    /* ─── CONTACT ─── */
+    #contact { background: var(--bg2); }
+
+    .contact-wrapper {
+      max-width: 700px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .contact-wrapper p {
+      color: var(--text-dim);
+      font-size: 1rem;
+      line-height: 1.7;
+      margin-bottom: 40px;
+    }
+
+    .contact-links {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .contact-link {
+      display: flex; align-items: center; gap: 10px;
+      padding: 14px 24px;
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: all .25s;
+    }
+
+    .contact-link:hover {
+      border-color: var(--green);
+      color: var(--green);
+      background: var(--green-glow);
+      transform: translateY(-3px);
+    }
+
+    .contact-link .icon { font-size: 1.2rem; }
+
+    /* ─── FOOTER ─── */
+    footer {
+      text-align: center;
+      padding: 36px 8%;
+      border-top: 1px solid var(--border);
+      color: var(--text-dim);
+      font-size: 0.85rem;
+    }
+
+    footer .quote {
+      font-family: 'Fira Code', monospace;
+      color: var(--green);
+      margin-bottom: 10px;
+      font-size: 0.9rem;
+    }
+
+    /* ─── REVEAL ANIMATION ─── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity .7s ease, transform .7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ─── MOBILE ─── */
+    @media (max-width: 768px) {
+      nav { padding: 14px 5%; }
+      .nav-links { gap: 16px; }
+      .nav-links a { font-size: 0.8rem; }
+      section { padding: 70px 5%; }
+      .about-grid { grid-template-columns: 1fr; gap: 30px; }
+      .about-stats { grid-template-columns: 1fr 1fr; }
+      .timeline::before { left: 14px; }
+      .timeline-item { padding-left: 46px; }
+      .timeline-dot { left: 5px; }
+    }
   </style>
 </head>
-
 <body>
 
+<!-- NAV -->
 <nav>
-  <strong>Abdelhakim Hani</strong>
-  <div>
-    <a href="#about">About</a>
-    <a href="#experience">Experience</a>
-    <a href="#projects">Projects</a>
-    <a href="#skills">Skills</a>
-    <a href="#contact">Contact</a>
-  </div>
+  <a href="#hero" class="nav-logo">&gt; abdelhakim<span>.hani</span></a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
 </nav>
 
 <!-- HERO -->
-<section class="hero">
-  <h1>Cybersecurity Engineer</h1>
-  <p>AI Security · SOC Analyst · Full Stack Developer</p>
-  <button class="btn" onclick="window.open('CV.pdf')">Download CV</button>
+<section id="hero">
+  <canvas id="matrix-canvas"></canvas>
+  <div class="hero-content">
+    <div class="hero-tag">&#x2514; Available for SOC &amp; Security roles</div>
+    <h1 class="hero-name">Abdelhakim <span class="highlight">Hani</span></h1>
+    <p class="hero-subtitle" id="typed-text"><span class="cursor"></span></p>
+    <p class="hero-desc">
+      Cybersecurity Engineer and CS student at UIR, building intelligent,
+      secure systems that combine <strong>AI</strong> with <strong>network defense</strong>.
+      From threat detection to penetration testing — precision is the mission.
+    </p>
+    <div class="hero-btns">
+      <a href="CV.pdf" class="btn btn-primary" target="_blank">Download CV</a>
+      <a href="#projects" class="btn btn-secondary">View Projects</a>
+      <a href="#contact" class="btn btn-secondary">Contact Me</a>
+    </div>
+  </div>
 </section>
 
 <!-- ABOUT -->
 <section id="about" class="reveal">
-  <h2>About Me</h2>
-  <p style="max-width:900px;margin:auto;text-align:center">
-    I am a Computer Science Engineer specializing in Cybersecurity and Artificial Intelligence.
-    Passionate about SOC operations, threat detection, secure architectures, and automation.
-    Currently completing my engineering degree at Université Internationale de Rabat.
-  </p>
+  <div class="section-title">
+    <h2><span>//</span> About Me</h2>
+    <div class="divider"></div>
+  </div>
+  <div class="about-grid">
+    <div>
+      <div class="about-text">
+        <p>
+          I am a <strong>Computer Science Engineering student</strong> at Université Internationale
+          de Rabat (UIR), specializing in <strong>Cybersecurity & Artificial Intelligence</strong>.
+        </p>
+        <p>
+          My focus is on building intelligent security systems — combining <strong>machine learning</strong>
+          with real-world threat scenarios to create tools that actually detect and respond to attacks.
+        </p>
+        <p>
+          I enjoy working across the full security stack: from low-level <strong>network traffic analysis</strong>
+          to high-level <strong>SOC operations</strong>, from <strong>penetration testing</strong> to
+          <strong>full-stack secure application development</strong>.
+        </p>
+      </div>
+      <div class="about-stats">
+        <div class="stat-box"><div class="num">6+</div><div class="label">Projects Shipped</div></div>
+        <div class="stat-box"><div class="num">7+</div><div class="label">Certifications</div></div>
+        <div class="stat-box"><div class="num">5+</div><div class="label">Languages</div></div>
+        <div class="stat-box"><div class="num">3+</div><div class="label">Years Coding</div></div>
+      </div>
+    </div>
+    <div class="about-focus">
+      <div class="focus-item">
+        <div class="focus-icon">🔍</div>
+        <div>
+          <h4>Threat Detection & SOC</h4>
+          <p>SIEM (Splunk, Elastic, Sentinel), log analysis, IDS/IPS with Suricata & Zeek</p>
+        </div>
+      </div>
+      <div class="focus-item">
+        <div class="focus-icon">🔴</div>
+        <div>
+          <h4>Penetration Testing</h4>
+          <p>Reconnaissance, exploitation, web app testing with Burp Suite, Metasploit, Nmap</p>
+        </div>
+      </div>
+      <div class="focus-item">
+        <div class="focus-icon">🧠</div>
+        <div>
+          <h4>AI-Powered Security</h4>
+          <p>ML-based attack detection, anomaly detection, TensorFlow & Scikit-learn pipelines</p>
+        </div>
+      </div>
+      <div class="focus-item">
+        <div class="focus-icon">⚙️</div>
+        <div>
+          <h4>Security Automation</h4>
+          <p>Python & Bash scripting, automated threat response, C2 simulation with GNS3</p>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
 <!-- EXPERIENCE -->
 <section id="experience" class="reveal">
-  <h2>Professional Experience</h2>
-  <div class="grid">
-    <div class="card">
-      <h3>Full Stack Developer — Copag (Menara Holding)</h3>
-      <p>Angular · Spring Boot · MySQL</p>
-      <ul>
-        <li>Built full commercial management platform</li>
-        <li>Designed UML architecture</li>
-        <li>Deployed production-ready system</li>
-      </ul>
+  <div class="section-title">
+    <h2><span>//</span> Experience</h2>
+    <div class="divider"></div>
+  </div>
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-card">
+        <div class="timeline-header">
+          <div>
+            <div class="timeline-title">Full Stack Developer — Intern</div>
+            <div class="timeline-company">Copag · Menara Holding</div>
+          </div>
+          <div class="timeline-date">Jul 2024 – Sep 2024</div>
+        </div>
+        <ul>
+          <li>Designed and built a full commercial management system from scratch (web + mobile)</li>
+          <li>Architected the system using UML — use case, class, and sequence diagrams</li>
+          <li>Integrated secure authentication and role-based access control (RBAC)</li>
+          <li>Delivered a production-ready application within a 3-month timeline</li>
+        </ul>
+        <div class="tags">
+          <span class="tag">Angular</span>
+          <span class="tag">Spring Boot</span>
+          <span class="tag">MySQL</span>
+          <span class="tag">UML</span>
+          <span class="tag">REST API</span>
+          <span class="tag">RBAC</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-card">
+        <div class="timeline-header">
+          <div>
+            <div class="timeline-title">CS Engineering Student — Cybersecurity Track</div>
+            <div class="timeline-company">Université Internationale de Rabat (UIR)</div>
+          </div>
+          <div class="timeline-date">2022 – Present</div>
+        </div>
+        <ul>
+          <li>Specializing in Cybersecurity & Artificial Intelligence</li>
+          <li>Built ML-based XSS detection system as a major academic project</li>
+          <li>Designed and simulated C2 (Command & Control) network architecture using GNS3</li>
+          <li>Conducted penetration testing labs and participated in CTF challenges</li>
+        </ul>
+        <div class="tags">
+          <span class="tag">Network Security</span>
+          <span class="tag">Machine Learning</span>
+          <span class="tag">GNS3</span>
+          <span class="tag">Wireshark</span>
+          <span class="tag">Python</span>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- PROJECTS -->
 <section id="projects" class="reveal">
-  <h2>Key Projects</h2>
-  <div class="grid">
-    <div class="card">XSS Detection using Machine Learning</div>
-    <div class="card">C2 Architecture Network Simulation</div>
-    <div class="card">SOC & SIEM Detection Lab</div>
-    <div class="card">Medical Image AI Classification</div>
+  <div class="section-title">
+    <h2><span>//</span> Projects</h2>
+    <p>A selection of security, AI, and full-stack projects</p>
+    <div class="divider"></div>
+  </div>
+  <div class="projects-grid">
+
+    <div class="project-card">
+      <div class="project-card-header">
+        <div class="project-icon">🛡️</div>
+        <div class="project-links">
+          <a href="https://github.com/Abdelhakim-hani/XSS-Detection" target="_blank" title="GitHub">&#x2197;</a>
+        </div>
+      </div>
+      <span class="project-type type-security">Security · ML</span>
+      <div class="project-name">XSS Detection System</div>
+      <p class="project-desc">
+        Machine learning–based system for detecting Cross-Site Scripting (XSS) attacks.
+        Uses TF-IDF vectorization with Logistic Regression, Random Forest, SVM, and a
+        Deep Learning model (TensorFlow) to detect even obfuscated payloads.
+      </p>
+      <div class="tags" style="margin-top:16px">
+        <span class="tag">Python</span>
+        <span class="tag">TensorFlow</span>
+        <span class="tag">Scikit-learn</span>
+        <span class="tag">TF-IDF</span>
+        <span class="tag">SVM</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-card-header">
+        <div class="project-icon">🤖</div>
+        <div class="project-links">
+          <a href="https://github.com/Abdelhakim-hani/IA_Project-" target="_blank" title="GitHub">&#x2197;</a>
+        </div>
+      </div>
+      <span class="project-type type-ai">AI · LLM</span>
+      <div class="project-name">AI PDF Assistant</div>
+      <p class="project-desc">
+        Chat with multiple PDF documents simultaneously using a Large Language Model
+        (RAG architecture). Upload any PDF and ask questions — the system retrieves
+        relevant context and generates precise answers using OpenAI & LangChain.
+      </p>
+      <div class="tags" style="margin-top:16px">
+        <span class="tag">Python</span>
+        <span class="tag">LangChain</span>
+        <span class="tag">OpenAI</span>
+        <span class="tag">RAG</span>
+        <span class="tag">FAISS</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-card-header">
+        <div class="project-icon">🛰️</div>
+        <div class="project-links">
+          <a href="https://github.com/Abdelhakim-hani" target="_blank" title="GitHub">&#x2197;</a>
+        </div>
+      </div>
+      <span class="project-type type-security">Security · Network</span>
+      <div class="project-name">C2 Architecture Simulation</div>
+      <p class="project-desc">
+        Designed and simulated a Command & Control (C2) network architecture using GNS3.
+        Automated cyberattack scenarios using Python & Bash scripting, analyzed traffic
+        patterns and threat behavior in real-time with Wireshark.
+      </p>
+      <div class="tags" style="margin-top:16px">
+        <span class="tag">GNS3</span>
+        <span class="tag">Wireshark</span>
+        <span class="tag">Python</span>
+        <span class="tag">Bash</span>
+        <span class="tag">Network</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-card-header">
+        <div class="project-icon">🏢</div>
+        <div class="project-links">
+          <a href="https://github.com/Abdelhakim-hani/aterya-crm" target="_blank" title="GitHub">&#x2197;</a>
+        </div>
+      </div>
+      <span class="project-type type-desktop">Desktop App</span>
+      <div class="project-name">ATERYA CRM</div>
+      <p class="project-desc">
+        Professional desktop CRM application built with Electron + React.
+        Features customer management, sales tracking, analytics dashboard with Recharts,
+        and a local SQLite database — fully offline-capable.
+      </p>
+      <div class="tags" style="margin-top:16px">
+        <span class="tag">Electron</span>
+        <span class="tag">React</span>
+        <span class="tag">TypeScript</span>
+        <span class="tag">SQLite</span>
+        <span class="tag">Tailwind</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-card-header">
+        <div class="project-icon">🎓</div>
+        <div class="project-links">
+          <a href="https://github.com/Abdelhakim-hani/sijil-app" target="_blank" title="GitHub">&#x2197;</a>
+        </div>
+      </div>
+      <span class="project-type type-desktop">Desktop App</span>
+      <div class="project-name">SIJIL — Student Management</div>
+      <p class="project-desc">
+        Electron-based student certificate and attendance management system.
+        Handles student records, payment receipts (PDF), attendance tracking,
+        course management, and exports reports to Excel/PDF.
+      </p>
+      <div class="tags" style="margin-top:16px">
+        <span class="tag">Electron</span>
+        <span class="tag">React</span>
+        <span class="tag">Ant Design</span>
+        <span class="tag">SQLite</span>
+        <span class="tag">PDFKit</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-card-header">
+        <div class="project-icon">🏘️</div>
+        <div class="project-links">
+          <a href="https://github.com/Abdelhakim-hani/real-estate-laravel-app" target="_blank" title="GitHub">&#x2197;</a>
+        </div>
+      </div>
+      <span class="project-type type-fullstack">Full Stack</span>
+      <div class="project-name">Real Estate Platform</div>
+      <p class="project-desc">
+        Laravel-based web application for real estate listings and property management.
+        Features property browsing, listing management, user authentication,
+        and an admin dashboard for full CRUD operations.
+      </p>
+      <div class="tags" style="margin-top:16px">
+        <span class="tag">Laravel</span>
+        <span class="tag">PHP</span>
+        <span class="tag">MySQL</span>
+        <span class="tag">Blade</span>
+        <span class="tag">REST API</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-card-header">
+        <div class="project-icon">🩺</div>
+        <div class="project-links">
+          <a href="https://github.com/Abdelhakim-hani" target="_blank" title="GitHub">&#x2197;</a>
+        </div>
+      </div>
+      <span class="project-type type-ai">AI · Medical</span>
+      <div class="project-name">Medical Image Classification</div>
+      <p class="project-desc">
+        CNN-based model for detecting gastrointestinal bleeding from Wireless Capsule
+        Endoscopy (WCE) images. Combined Convolutional Neural Networks with Random Forest
+        for improved diagnostic accuracy — Bachelor final project.
+      </p>
+      <div class="tags" style="margin-top:16px">
+        <span class="tag">Python</span>
+        <span class="tag">TensorFlow</span>
+        <span class="tag">CNN</span>
+        <span class="tag">Scikit-learn</span>
+        <span class="tag">Medical AI</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-card-header">
+        <div class="project-icon">⚙️</div>
+        <div class="project-links">
+          <a href="https://github.com/Abdelhakim-hani/C-projects" target="_blank" title="GitHub">&#x2197;</a>
+        </div>
+      </div>
+      <span class="project-type type-systems">Systems</span>
+      <div class="project-name">C Systems Projects</div>
+      <p class="project-desc">
+        Collection of systems programming projects in C — data structures (linked lists, trees, graphs),
+        sorting algorithms, memory management, file I/O, and low-level OS concepts.
+      </p>
+      <div class="tags" style="margin-top:16px">
+        <span class="tag">C</span>
+        <span class="tag">Data Structures</span>
+        <span class="tag">Algorithms</span>
+        <span class="tag">Memory Management</span>
+      </div>
+    </div>
+
   </div>
 </section>
 
 <!-- SKILLS -->
 <section id="skills" class="reveal">
-  <h2>Technical Skills</h2>
+  <div class="section-title">
+    <h2><span>//</span> Skills & Tools</h2>
+    <div class="divider"></div>
+  </div>
+  <div class="skills-grid">
+    <div class="skill-category">
+      <h3>&#x1F6E1; Network Security</h3>
+      <div class="skill-badges">
+        <span class="badge">Wireshark</span>
+        <span class="badge">Suricata</span>
+        <span class="badge">Zeek</span>
+        <span class="badge">Nmap</span>
+        <span class="badge">GNS3</span>
+        <span class="badge">TCP/IP</span>
+        <span class="badge">VPN / VLAN</span>
+        <span class="badge">Firewall</span>
+        <span class="badge">DNS / DHCP</span>
+      </div>
+    </div>
+    <div class="skill-category">
+      <h3>&#x1F4CA; SIEM & SOC</h3>
+      <div class="skill-badges">
+        <span class="badge">Splunk</span>
+        <span class="badge">Elastic SIEM</span>
+        <span class="badge">Microsoft Sentinel</span>
+        <span class="badge">Velociraptor</span>
+        <span class="badge">MS Defender</span>
+        <span class="badge">Log Analysis</span>
+        <span class="badge">Incident Response</span>
+      </div>
+    </div>
+    <div class="skill-category">
+      <h3>&#x1F534; Penetration Testing</h3>
+      <div class="skill-badges">
+        <span class="badge">Kali Linux</span>
+        <span class="badge">Metasploit</span>
+        <span class="badge">Burp Suite</span>
+        <span class="badge">SQLMap</span>
+        <span class="badge">Reconnaissance</span>
+        <span class="badge">Exploitation</span>
+        <span class="badge">OWASP Top 10</span>
+      </div>
+    </div>
+    <div class="skill-category">
+      <h3>&#x1F9E0; AI / Machine Learning</h3>
+      <div class="skill-badges">
+        <span class="badge">TensorFlow</span>
+        <span class="badge">Scikit-learn</span>
+        <span class="badge">LangChain</span>
+        <span class="badge">OpenAI API</span>
+        <span class="badge">CNN</span>
+        <span class="badge">SVM</span>
+        <span class="badge">Random Forest</span>
+        <span class="badge">NLP / TF-IDF</span>
+        <span class="badge">Pandas</span>
+      </div>
+    </div>
+    <div class="skill-category">
+      <h3>&#x1F4BB; Development</h3>
+      <div class="skill-badges">
+        <span class="badge">Python</span>
+        <span class="badge">TypeScript</span>
+        <span class="badge">JavaScript</span>
+        <span class="badge">Java</span>
+        <span class="badge">PHP</span>
+        <span class="badge">C</span>
+        <span class="badge">Bash</span>
+        <span class="badge">SQL</span>
+      </div>
+    </div>
+    <div class="skill-category">
+      <h3>&#x1F4E6; Frameworks & Platforms</h3>
+      <div class="skill-badges">
+        <span class="badge">React</span>
+        <span class="badge">Electron</span>
+        <span class="badge">Laravel</span>
+        <span class="badge">Spring Boot</span>
+        <span class="badge">Angular</span>
+        <span class="badge">Node.js</span>
+        <span class="badge">Linux</span>
+        <span class="badge">Windows Server</span>
+        <span class="badge">Docker</span>
+      </div>
+    </div>
+  </div>
+</section>
 
-  <div class="skill"><span>Network Security</span><div class="bar"><div style="width:90%"></div></div></div>
-  <div class="skill"><span>Penetration Testing</span><div class="bar"><div style="width:85%"></div></div></div>
-  <div class="skill"><span>Python & Java</span><div class="bar"><div style="width:88%"></div></div></div>
-  <div class="skill"><span>AI & Machine Learning</span><div class="bar"><div style="width:80%"></div></div></div>
-
+<!-- CERTIFICATIONS -->
+<section id="certifications" class="reveal">
+  <div class="section-title">
+    <h2><span>//</span> Certifications</h2>
+    <div class="divider"></div>
+  </div>
+  <div class="certs-grid">
+    <div class="cert-card">
+      <div class="cert-icon">&#x1F4A1;</div>
+      <div>
+        <div class="cert-name">Cisco Ethical Hacker</div>
+        <div class="cert-issuer">Cisco NetAcad</div>
+      </div>
+    </div>
+    <div class="cert-card">
+      <div class="cert-icon">&#x1F427;</div>
+      <div>
+        <div class="cert-name">Red Hat System Administration</div>
+        <div class="cert-issuer">Red Hat</div>
+      </div>
+    </div>
+    <div class="cert-card">
+      <div class="cert-icon">&#x2601;&#xFE0F;</div>
+      <div>
+        <div class="cert-name">Cloud Security Foundations</div>
+        <div class="cert-issuer">Cloud Security Alliance</div>
+      </div>
+    </div>
+    <div class="cert-card">
+      <div class="cert-icon">&#x1F7E1;</div>
+      <div>
+        <div class="cert-name">AWS Cloud Foundations</div>
+        <div class="cert-issuer">Amazon Web Services</div>
+      </div>
+    </div>
+    <div class="cert-card">
+      <div class="cert-icon">&#x1F489;</div>
+      <div>
+        <div class="cert-name">SQL Injection Attacks</div>
+        <div class="cert-issuer">EC-Council / Coursera</div>
+      </div>
+    </div>
+    <div class="cert-card">
+      <div class="cert-icon">&#x1F4C8;</div>
+      <div>
+        <div class="cert-name">IT Security Through Monitoring</div>
+        <div class="cert-issuer">IBM</div>
+      </div>
+    </div>
+    <div class="cert-card">
+      <div class="cert-icon">&#x1F5A5;&#xFE0F;</div>
+      <div>
+        <div class="cert-name">Virtualize Work Environments</div>
+        <div class="cert-issuer">VMware</div>
+      </div>
+    </div>
+  </div>
 </section>
 
 <!-- CONTACT -->
-<section id="contact" class="reveal contact">
-  <h2>Contact Me</h2>
-  <form>
-    <input type="text" placeholder="Your Name" required>
-    <input type="email" placeholder="Your Email" required>
-    <textarea rows="5" placeholder="Your Message"></textarea>
-    <button class="btn">Send Message</button>
-  </form>
+<section id="contact" class="reveal">
+  <div class="section-title">
+    <h2><span>//</span> Get In Touch</h2>
+    <div class="divider"></div>
+  </div>
+  <div class="contact-wrapper">
+    <p>
+      I'm currently seeking <strong>SOC Analyst</strong> and <strong>Cybersecurity Engineer</strong> roles.
+      Whether you have an opportunity, a project, or just want to talk security — my inbox is always open.
+    </p>
+    <div class="contact-links">
+      <a href="mailto:han.23hani@gmail.com" class="contact-link">
+        <span class="icon">&#x2709;&#xFE0F;</span> han.23hani@gmail.com
+      </a>
+      <a href="https://www.linkedin.com/in/abdelhakim-hani" class="contact-link" target="_blank">
+        <span class="icon">&#x1F4BC;</span> LinkedIn
+      </a>
+      <a href="https://github.com/Abdelhakim-hani" class="contact-link" target="_blank">
+        <span class="icon">&#x1F431;</span> GitHub
+      </a>
+      <a href="https://tryhackme.com/p/hani23" class="contact-link" target="_blank">
+        <span class="icon">&#x1F3AF;</span> TryHackMe
+      </a>
+    </div>
+  </div>
 </section>
 
+<!-- FOOTER -->
 <footer>
-  <p>“Cybersecurity is not just protection — it’s precision.”</p>
-  <p>Morocco · Available for internships & junior cybersecurity roles</p>
+  <p class="quote">"Cybersecurity is not just protection — it's precision."</p>
+  <p>Abdelhakim Hani &nbsp;·&nbsp; Morocco &nbsp;·&nbsp; 2025</p>
 </footer>
 
 <script>
-  const reveals = document.querySelectorAll(".reveal");
-  window.addEventListener("scroll", ()=>{
-    reveals.forEach(el =>{
-      const top = el.getBoundingClientRect().top;
-      if(top < window.innerHeight - 120){
-        el.classList.add("active");
-      }
-    });
-  });
+  /* ── Matrix Rain ── */
+  const canvas = document.getElementById('matrix-canvas');
+  const ctx = canvas.getContext('2d');
+
+  function resizeCanvas() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  }
+  resizeCanvas();
+  window.addEventListener('resize', resizeCanvas);
+
+  const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%^&*()アイウエオカキクケコ';
+  const fontSize = 14;
+  let columns = Math.floor(canvas.width / fontSize);
+  let drops = Array(columns).fill(1);
+
+  function drawMatrix() {
+    ctx.fillStyle = 'rgba(13,17,23,0.05)';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    ctx.fillStyle = '#00FF41';
+    ctx.font = fontSize + 'px Fira Code';
+    columns = Math.floor(canvas.width / fontSize);
+    if (drops.length !== columns) drops = Array(columns).fill(1);
+    for (let i = 0; i < drops.length; i++) {
+      const char = chars[Math.floor(Math.random() * chars.length)];
+      ctx.fillText(char, i * fontSize, drops[i] * fontSize);
+      if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) drops[i] = 0;
+      drops[i]++;
+    }
+  }
+  setInterval(drawMatrix, 45);
+
+  /* ── Typing Effect ── */
+  const lines = [
+    'Cybersecurity Engineer',
+    'SOC Analyst & Threat Hunter',
+    'AI Security Researcher',
+    'Ethical Hacker',
+    'Full Stack Developer',
+  ];
+  const el = document.getElementById('typed-text');
+  let lineIdx = 0, charIdx = 0, deleting = false;
+
+  function type() {
+    const current = lines[lineIdx];
+    const displayed = deleting ? current.slice(0, charIdx--) : current.slice(0, charIdx++);
+    el.innerHTML = displayed + '<span class="cursor"></span>';
+
+    if (!deleting && charIdx > current.length) {
+      setTimeout(() => { deleting = true; type(); }, 2000);
+      return;
+    }
+    if (deleting && charIdx < 0) {
+      deleting = false;
+      lineIdx = (lineIdx + 1) % lines.length;
+      charIdx = 0;
+      setTimeout(type, 400);
+      return;
+    }
+    setTimeout(type, deleting ? 40 : 75);
+  }
+  type();
+
+  /* ── Scroll Reveal ── */
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 </script>
 
 </body>
